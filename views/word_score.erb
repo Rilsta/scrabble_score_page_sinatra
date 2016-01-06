@@ -1,2 +1,5 @@
 <h1>Your Score is...drumroll please...</h1>
-<%= @word_score %>
+<p><%= "The word \"#{@word}\" has a score of #{@word_score}!"%></p>
+<form method="get" action="/">
+     <input type="submit" id="submit-form" class="hidden" />
+</form>
