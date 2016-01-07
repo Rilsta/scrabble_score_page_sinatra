@@ -10,11 +10,16 @@ class String
                    "Q" => 10, "Z" => 10}
 
   define_method(:scrabble) do
+    return "Input not valid" if has_number?
     word_score = 0
     letters = self.split("")
     letters.each() do |letter|
       word_score += letter_scores.fetch(letter.upcase())
     end
     return word_score
+  end
+
+  define_method(:has_number?) do
+    self.count("0-9") > 0
   end
 end
